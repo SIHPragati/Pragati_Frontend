@@ -59,9 +59,23 @@ export default function RoleSelectionPage() {
             <ArrowLeft className="w-4 h-4" />
             Back to home
           </button>
-          <p className="text-[11px] sm:text-xs text-muted-foreground">
-            Pragati · Secure role-based access
-          </p>
+          <div className="flex items-center gap-2">
+            <span className="hidden sm:inline text-[11px] text-muted-foreground">Language</span>
+            <div className="inline-flex items-center rounded-full bg-white/70 dark:bg-slate-900/70 border border-white/60 px-1 py-0.5 text-[11px] shadow-sm">
+              <button
+                type="button"
+                className="px-2 py-0.5 rounded-full bg-primary text-white font-medium"
+              >
+                English
+              </button>
+              <button
+                type="button"
+                className="px-2 py-0.5 rounded-full text-muted-foreground hover:bg-white/80 dark:hover:bg-slate-800/80 transition"
+              >
+                ਪੰਜਾਬੀ
+              </button>
+            </div>
+          </div>
         </div>
       </header>
 
