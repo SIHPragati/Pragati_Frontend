@@ -11,6 +11,7 @@ interface LoginCardProps {
   role: Role;
   title: string;
   subtitle: string;
+  redirectPath?: string;
 }
 
 interface LoginResponse {
@@ -23,7 +24,7 @@ interface LoginResponse {
   schoolId: string | null;
 }
 
-export function LoginCard({ role, title, subtitle }: LoginCardProps) {
+export function LoginCard({ role, title, subtitle, redirectPath }: LoginCardProps) {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -67,9 +68,12 @@ export function LoginCard({ role, title, subtitle }: LoginCardProps) {
       if (typeof window !== 'undefined') {
         localStorage.setItem('pragati_token', data.token);
         localStorage.setItem('pragati_role', data.role);
+        localStorage.setItem('pragati_userId', data.userId);
+        // Use email entered as display name fallback until richer profile available
+        localStorage.setItem('pragati_name', email);
       }
 
-      router.push('/');
+      router.push(redirectPath ?? '/');
     } catch {
       setError('Unable to sign in right now. Please check your connection.');
     } finally {

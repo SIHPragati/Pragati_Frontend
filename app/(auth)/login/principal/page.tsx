@@ -6,6 +6,7 @@ export default function PrincipalLoginPage() {
       role="PRINCIPAL"
       title="Principal sign in"
       subtitle="Monitor school performance, compliance and staff attendance."
+      redirectPath="/principal"
     />
   );
 }
