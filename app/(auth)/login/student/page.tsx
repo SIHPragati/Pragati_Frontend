@@ -6,6 +6,7 @@ export default function StudentLoginPage() {
       role="STUDENT"
       title="Student sign in"
       subtitle="Access your timetable, attendance and exam results."
+      redirectPath="/student"
     />
   );
 }
